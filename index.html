@@ -299,6 +299,120 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
 .social-admin-input:focus{border-color:var(--red);}
 .save-banner{display:none;background:rgba(26,122,60,0.15);border:1.5px solid #1A7A3C;border-radius:8px;padding:12px 16px;font-size:14px;font-weight:700;color:#1A7A3C;margin-top:16px;text-align:center;}
 .save-banner.show{display:block;}
+
+/* ═══════════════════════════════════════
+   MOBILE — PHONE FRIENDLY (max 480px)
+═══════════════════════════════════════ */
+
+/* Global overflow lock */
+html, body { overflow-x: hidden; max-width: 100%; }
+* { max-width: 100%; }
+img { max-width: 100%; height: auto; }
+
+@media(max-width:480px){
+
+  /* Top bar — stack vertically */
+  .top-bar { flex-direction:column; align-items:flex-start; padding:10px 1rem; gap:8px; }
+  .top-bar-info { flex-direction:column; gap:4px; font-size:11px; }
+  .top-bar-right { width:100%; justify-content:space-between; }
+
+  /* Nav */
+  .nav { padding:0 1rem; }
+  .nav-logo img { height:40px; }
+
+  /* Hero */
+  #home { padding:60px 1rem 80px; min-height:auto; }
+  .hero-heading { font-size:clamp(48px,14vw,72px); }
+  .hero-desc { font-size:15px; }
+  .hero-actions { flex-direction:column; align-items:flex-start; gap:10px; }
+  .hero-actions .btn-primary, .hero-actions .btn-ghost { width:100%; text-align:center; padding:14px 20px; }
+  .hero-locations { gap:8px; }
+  .loc-pill { font-size:12px; padding:6px 12px; }
+
+  /* Gallery */
+  #gallery { padding:48px 1rem 52px; }
+  .gallery-grid { grid-template-columns:1fr; gap:14px; }
+  .gallery-title { font-size:clamp(32px,9vw,48px); }
+
+  /* Bundle */
+  #bundle { padding:48px 1rem; }
+  .bundle-headline { font-size:clamp(32px,9vw,48px); }
+  .bundle-grid { grid-template-columns:1fr 1fr; gap:10px; }
+  .bundle-item { padding:14px 12px; }
+  .bundle-item-name { font-size:13px; }
+  .bundle-savings-badge { width:100%; text-align:center; }
+  .bundle-total-row { flex-direction:column; align-items:stretch; text-align:center; }
+  .btn-bundle { width:100%; text-align:center; }
+
+  /* About */
+  #about { padding:48px 1rem 56px !important; }
+  #about > div { grid-template-columns:1fr !important; gap:32px !important; }
+  .tire-ring { max-width:240px; }
+  .about-title { font-size:clamp(32px,9vw,48px); }
+  .about-body { font-size:15px; }
+  .value-card { padding:16px; }
+  .value-icon { width:38px; height:38px; font-size:17px; }
+  .about-cta-row { flex-direction:column; align-items:flex-start; }
+  .about-cta-row .btn-primary { width:100%; text-align:center; }
+
+  /* Locations bar */
+  #locations { padding:16px 1rem; flex-direction:column; }
+  .loc-card { padding:12px 0; border-right:none; border-bottom:1px solid rgba(28,28,28,0.1); width:100%; }
+  .loc-card:last-child { border-bottom:none; }
+
+  /* Services */
+  #services { padding:48px 1rem; }
+  .services-title { font-size:clamp(36px,10vw,56px); }
+  .services-grid { grid-template-columns:1fr 1fr; gap:10px; }
+  .service-card { padding:16px 14px; }
+  .service-icon { font-size:22px; }
+  .service-name { font-size:13px; }
+  .service-desc { font-size:12px; }
+
+  /* FAQ */
+  #faq { padding:40px 1rem 36px; }
+  .faq-section-title { font-size:clamp(38px,10vw,56px); }
+  .faq-body { padding:36px 1rem 48px; }
+  .faq-q-text { font-size:14px; }
+  .faq-answer p { font-size:14px; }
+
+  /* Contact */
+  #contact { padding:48px 1rem 56px; }
+  .contact-title { font-size:clamp(36px,10vw,52px); }
+  .contact-grid { grid-template-columns:1fr; gap:16px; }
+  .contact-card { padding:20px 18px; }
+
+  /* Contact form */
+  .contact-form-section { padding:48px 1rem; }
+  .form-title { font-size:clamp(32px,9vw,46px); }
+  .form-grid { grid-template-columns:1fr; gap:12px; }
+
+  /* Footer */
+  footer { padding:32px 1rem 20px; }
+  .footer-inner { flex-direction:column; gap:20px; }
+  .footer-links { gap:16px; }
+  .footer-bottom { flex-direction:column; align-items:flex-start; gap:10px; font-size:11px; }
+
+  /* Admin panel */
+  .admin-modal { border-radius:12px; }
+  .admin-tabs { padding:0 16px; overflow-x:auto; }
+  .admin-tab { padding:14px 12px; font-size:11px; white-space:nowrap; }
+  .admin-tab-content { padding:20px 16px; }
+  .admin-stats { grid-template-columns:repeat(3,1fr); gap:10px; }
+  .admin-stat-num { font-size:28px; }
+  .social-admin-grid { grid-template-columns:1fr; }
+  .gallery-admin-grid { grid-template-columns:1fr 1fr; }
+  .media-input-row { flex-direction:column; align-items:stretch; }
+  .media-input-row input[type=text] { width:100%; }
+}
+
+@media(max-width:360px){
+  .bundle-grid { grid-template-columns:1fr; }
+  .services-grid { grid-template-columns:1fr; }
+  .gallery-admin-grid { grid-template-columns:1fr; }
+  .hero-heading { font-size:44px; }
+}
+
 </style>
 </head>
 <body id="page-root" class="show-en">
@@ -306,7 +420,7 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
 <div class="top-bar">
   <div class="top-bar-info">
     <span>&#128222; <a href="tel:9182690917">(918) 269-0917</a></span>
-    <span>&#9993;&#65039; <a href="mailto:elamigotireshop1@gmail.com">elamigotireshop1@gmail.com</a></span>
+    <span>&#9993;&#65039; <a href="/cdn-cgi/l/email-protection#fb9e979a96929c948f92899e8893948bcabb9c969a9297d5989496"><span class="__cf_email__" data-cfemail="74111815191d131b001d0611071c1b0445341319151d185a171b19">[email&#160;protected]</span></a></span>
     <span class="inline-en">&#128205; Claremore &amp; Owasso, OK</span>
     <span class="inline-es">&#128205; Claremore y Owasso, OK</span>
   </div>
@@ -467,7 +581,7 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
   <div class="faq-category"><div class="cat-icon">&#128197;</div><div class="cat-label"><span class="inline-en">Appointments</span><span class="inline-es">Citas</span></div><div class="cat-line"></div></div>
   <div class="faq-item"><button class="faq-question" onclick="faqToggle(this)"><span class="faq-q-text"><span class="inline-en">Do I need an appointment?</span><span class="inline-es">&#191;Necesito una cita?</span></span><div class="faq-chevron">&#9662;</div></button><div class="faq-answer"><p><span class="en">Walk-ins always welcome! No appointment needed.</span><span class="es">&#161;Sin cita siempre bienvenido! No se necesita cita previa.</span></p></div></div>
   <div class="faq-category"><div class="cat-icon">&#128222;</div><div class="cat-label"><span class="inline-en">Contact</span><span class="inline-es">Contacto</span></div><div class="cat-line"></div></div>
-  <div class="faq-item"><button class="faq-question" onclick="faqToggle(this)"><span class="faq-q-text"><span class="inline-en">How can I contact El Amigo?</span><span class="inline-es">&#191;C&#243;mo puedo contactarlos?</span></span><div class="faq-chevron">&#9662;</div></button><div class="faq-answer"><p><span class="en">Call/text <strong>(918) 269-0917</strong>, email <strong>elamigotireshop1@gmail.com</strong>, or stop by. We respond fast!</span><span class="es">Llama/escribe al <strong>(918) 269-0917</strong>, env&#237;a correo a <strong>elamigotireshop1@gmail.com</strong> o vis&#237;tanos.</span></p></div></div>
+  <div class="faq-item"><button class="faq-question" onclick="faqToggle(this)"><span class="faq-q-text"><span class="inline-en">How can I contact El Amigo?</span><span class="inline-es">&#191;C&#243;mo puedo contactarlos?</span></span><div class="faq-chevron">&#9662;</div></button><div class="faq-answer"><p><span class="en">Call/text <strong>(918) 269-0917</strong>, email <strong><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="bfdad3ded2d6d8d0cbd6cddaccd7d0cf8effd8d2ded6d391dcd0d2">[email&#160;protected]</a></strong>, or stop by. We respond fast!</span><span class="es">Llama/escribe al <strong>(918) 269-0917</strong>, env&#237;a correo a <strong><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="f3969f929e9a949c879a8196809b9c83c2b3949e929a9fdd909c9e">[email&#160;protected]</a></strong> o vis&#237;tanos.</span></p></div></div>
   <div class="faq-category"><div class="cat-icon">&#9917;</div><div class="cat-label"><span class="inline-en">Fun Stuff</span><span class="inline-es">Lo Divertido</span></div><div class="cat-line"></div></div>
   <div class="faq-item"><button class="faq-question" onclick="faqToggle(this)"><span class="faq-q-text"><span class="inline-en">What's your favorite soccer team? <span class="fun-badge">&#128309; Local Pride</span></span><span class="inline-es">&#191;Cu&#225;l es su equipo favorito? <span class="fun-badge">&#128309; Orgullo Local</span></span></span><div class="faq-chevron">&#9662;</div></button><div class="faq-answer"><p><span class="en">Easy &#8212; FC Tulsa, all day! We're proud to be part of this community. &#9917;&#128309;</span><span class="es">&#161;F&#225;cil &#8212; FC Tulsa, siempre! Estamos orgullosos de ser parte de esta comunidad. &#9917;&#128309;</span></p></div></div>
 </div>
@@ -484,7 +598,7 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
         <div class="contact-card-title"><span class="inline-en">Reach Us</span><span class="inline-es">Comun&#237;cate</span></div>
         <div class="contact-row"><div class="contact-row-icon">&#128222;</div><div><div class="contact-row-label"><span class="inline-en">Phone / Text</span><span class="inline-es">Tel&#233;fono / SMS</span></div><div class="contact-row-val"><a href="tel:9182690917">(918) 269-0917</a></div></div></div>
         <div class="contact-row"><div class="contact-row-icon">&#128222;</div><div><div class="contact-row-label">Claremore East</div><div class="contact-row-val"><a href="tel:9182826914">(918) 282-6914</a></div></div></div>
-        <div class="contact-row"><div class="contact-row-icon">&#9993;&#65039;</div><div><div class="contact-row-label">Email</div><div class="contact-row-val"><a href="mailto:elamigotireshop1@gmail.com">elamigotireshop1@gmail.com</a></div></div></div>
+        <div class="contact-row"><div class="contact-row-icon">&#9993;&#65039;</div><div><div class="contact-row-label">Email</div><div class="contact-row-val"><a href="/cdn-cgi/l/email-protection#294c454844404e465d405b4c5a41465918694e44484045074a4644"><span class="__cf_email__" data-cfemail="a6c3cac7cbcfc1c9d2cfd4c3d5cec9d697e6c1cbc7cfca88c5c9cb">[email&#160;protected]</span></a></div></div></div>
         <div class="contact-row"><div class="contact-row-icon">&#127760;</div><div><div class="contact-row-label">Website</div><div class="contact-row-val"><a href="https://www.elamigotirestores.com" target="_blank">elamigotirestores.com</a></div></div></div>
       </div>
       <div class="contact-card">
@@ -549,7 +663,7 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
   </div>
   <div class="footer-bottom">
     <span>&#169; 2025 El Amigo Tire Shop. Claremore &amp; Owasso, Oklahoma.</span>
-    <span class="nv-tag">Created &amp; Maintained by <a href="https://nextvisiontulsa.com" target="_blank" onclick="handleNVClick(event)">Next Vision Tulsa</a></span>
+    <span class="nv-tag">Created &amp; Maintained by <a href="https://nextvisiontulsa.com" target="_blank">Next Vision Tulsa</a></span><span style="margin-left:16px;"><a href="#" onclick="openAdmin();return false;" style="font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.2);text-decoration:none;border:1px solid rgba(255,255,255,0.1);padding:3px 10px;border-radius:4px;transition:all 0.2s;" onmouseover="this.style.color='rgba(255,255,255,0.6)';this.style.borderColor='rgba(255,255,255,0.3)';" onmouseout="this.style.color='rgba(255,255,255,0.2)';this.style.borderColor='rgba(255,255,255,0.1)';">Admin</a></span>
   </div>
 </footer>
 
@@ -584,7 +698,7 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
           <div class="admin-stat"><div class="admin-stat-num" id="stat-today">0</div><div class="admin-stat-lbl">Today</div></div>
           <div class="admin-stat"><div class="admin-stat-num" id="stat-services">0</div><div class="admin-stat-lbl">Service Requests</div></div>
         </div>
-        <div class="admin-section-title"><span>Recent Submissions</span><button class="btn-sm" onclick="clearSubmissions()">Clear All</button></div>
+        <div style="background:linear-gradient(135deg,#1C1C1C,#2d2d2d);border-radius:12px;padding:18px 20px;margin-bottom:20px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;"><div><div style="font-family:'Bebas Neue',sans-serif;font-size:22px;color:#fff;line-height:1;">&#128190; Publish to Live Site</div><div style="font-size:12px;color:rgba(255,255,255,0.5);margin-top:3px;">Downloads a new index.html with all your changes baked in. Push to GitHub to go live.</div></div><button class="btn-sm btn-sm-red" style="font-size:13px;padding:10px 20px;white-space:nowrap;" onclick="exportSite()">&#128190; Download Updated Site</button></div><div class="admin-section-title"><span>Recent Submissions</span><button class="btn-sm" onclick="clearSubmissions()">Clear All</button></div>
         <div class="admin-submissions" id="admin-submissions-list"></div>
       </div>
       <div class="admin-tab-content" id="tab-media">
@@ -631,7 +745,7 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
   </div>
 </div>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 function getSettings(){
   var d={logoSrc:'Logo 1 2.png',social:{instagram:'',facebook:'',tiktok:'',google:'',youtube:'',twitter:''},gallery:[{captionEN:'Our Claremore Location',captionES:'Nuestra Tienda en Claremore',src:''},{captionEN:'Tire Installation Service',captionES:'Servicio de Instalacion',src:''},{captionEN:'Balancing and Rotation',captionES:'Balanceo y Rotacion',src:''},{captionEN:'Quality Work Every Time',captionES:'Trabajo de Calidad Siempre',src:''}]};
   try{var s=JSON.parse(localStorage.getItem('elamigo_settings')||'{}');return Object.assign({},d,s,{social:Object.assign({},d.social,s.social||{})},{gallery:(s.gallery&&s.gallery.length)?s.gallery:d.gallery});}catch(e){return d;}
@@ -652,8 +766,6 @@ function saveGallery(){renderGallery(getSettings().gallery);showBanner('gallery-
 function addGallerySlot(){var s=getSettings();s.gallery.push({captionEN:'New Photo',captionES:'Nueva Foto',src:''});saveSettings(s);buildAdminGallery();}
 function removeGallerySlot(index){var s=getSettings();s.gallery.splice(index,1);saveSettings(s);buildAdminGallery();renderGallery(s.gallery);}
 function submitForm(){var name=document.getElementById('f-name').value.trim();var phone=document.getElementById('f-phone').value.trim();if(!name||!phone){alert('Please enter your name and phone number.');return;}var sub={id:Date.now(),date:new Date().toLocaleString(),name:name,phone:phone,email:document.getElementById('f-email').value.trim(),service:document.getElementById('f-service').value,message:document.getElementById('f-message').value.trim()};var subs=JSON.parse(localStorage.getItem('elamigo_submissions')||'[]');subs.unshift(sub);localStorage.setItem('elamigo_submissions',JSON.stringify(subs));document.getElementById('form-success').classList.add('show');['f-name','f-phone','f-email','f-message'].forEach(function(id){document.getElementById(id).value='';});document.getElementById('f-service').value='';setTimeout(function(){document.getElementById('form-success').classList.remove('show');},5000);}
-var nvC=0,nvT=null;
-function handleNVClick(e){e.preventDefault();nvC++;clearTimeout(nvT);nvT=setTimeout(function(){nvC=0;},2000);if(nvC>=3){nvC=0;openAdmin();}}
 function openAdmin(){document.getElementById('admin-overlay').classList.add('open');document.getElementById('admin-login-screen').style.display='block';document.getElementById('admin-dashboard').classList.remove('open');document.getElementById('admin-error').style.display='none';document.getElementById('admin-user').value='';document.getElementById('admin-pass').value='';}
 function closeAdmin(){document.getElementById('admin-overlay').classList.remove('open');}
 function adminLogin(){var u=document.getElementById('admin-user').value.trim();var p=document.getElementById('admin-pass').value;if(u==='admin'&&p==='nextvision2025'){document.getElementById('admin-login-screen').style.display='none';document.getElementById('admin-dashboard').classList.add('open');loadDashboard();}else{document.getElementById('admin-error').style.display='block';}}
@@ -661,6 +773,21 @@ function switchTab(name,el){document.querySelectorAll('.admin-tab').forEach(func
 function loadDashboard(){var subs=JSON.parse(localStorage.getItem('elamigo_submissions')||'[]');var today=new Date().toLocaleDateString();document.getElementById('stat-total').textContent=subs.length;document.getElementById('stat-today').textContent=subs.filter(function(s){return s.date.startsWith(today);}).length;document.getElementById('stat-services').textContent=subs.filter(function(s){return s.service;}).length;var list=document.getElementById('admin-submissions-list');if(!subs.length){list.innerHTML='<div class="admin-empty">No submissions yet. Form entries will appear here.</div>';return;}list.innerHTML=subs.map(function(s){return '<div class="submission-card"><div class="sub-header"><div class="sub-name">'+s.name+'</div><div class="sub-date">'+s.date+'</div></div>'+(s.service?'<div class="sub-service">'+s.service+'</div>':'')+'<div class="sub-detail">&#128222; <a href="tel:'+s.phone.replace(/\D/g,'')+'">'+s.phone+'</a>'+(s.email?' &nbsp;|&nbsp; &#9993;&#65039; <a href="mailto:'+s.email+'">'+s.email+'</a>':'')+(s.message?'<br /><br />'+s.message:'')+'</div></div>';}).join('');}
 function clearSubmissions(){if(confirm('Clear all submissions?')){localStorage.removeItem('elamigo_submissions');loadDashboard();}}
 document.getElementById('admin-overlay').addEventListener('click',function(e){if(e.target===this)closeAdmin();});
+function exportSite(){
+  var s=getSettings();
+  var src=document.documentElement.outerHTML;
+  // Inject BAKED_SETTINGS after var BAKED_SETTINGS=null;
+  var baked='var BAKED_SETTINGS='+JSON.stringify(s)+';';
+  src=src.replace('var BAKED_SETTINGS=null;',baked);
+  var blob=new Blob([src],{type:'text/html'});
+  var a=document.createElement('a');
+  a.href=URL.createObjectURL(blob);
+  a.download='index.html';
+  a.click();
+  showBanner('gallery-save-banner','Site downloaded! Push index.html to GitHub to go live.');
+  // show banner in submissions tab too
+  var b=document.getElementById('export-banner');if(b){b.textContent='Downloaded! Replace your index.html in GitHub with this file.';b.classList.add('show');setTimeout(function(){b.classList.remove('show');},5000);}
+}
 function setLang(lang){document.getElementById('page-root').classList.remove('show-en','show-es');document.getElementById('page-root').classList.add('show-'+lang);document.getElementById('btn-en').classList.toggle('active',lang==='en');document.getElementById('btn-es').classList.toggle('active',lang==='es');document.documentElement.lang=lang;}
 function toggleMenu(){document.getElementById('nav-links').classList.toggle('open');}
 function closeMenu(){document.getElementById('nav-links').classList.remove('open');}
